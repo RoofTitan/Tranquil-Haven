@@ -150,31 +150,65 @@
             margin-right: 5px;
         }
         
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://massageburnaby.com/wp-content/uploads/2023/07/Palliative-Massage_the_serene_setting_of_an_end.png') no-repeat center center;
-            background-size: cover;
-            -webkit-background-size: cover;
-            z-index: -1;
-        }
-        
+       /* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://massageburnaby.com/wp-content/uploads/2023/07/Palliative-Massage_the_serene_setting_of_an_end.png') no-repeat center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+/* Remove the ::before pseudo-element entirely */
+/* .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://massageburnaby.com/wp-content/uploads/2023/07/Palliative-Massage_the_serene_setting_of_an_end.png') no-repeat center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    z-index: -1;
+} */
+
+/* iOS specific fixes are no longer needed */
+/* @supports (-webkit-touch-callout: none) {
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://massageburnaby.com/wp-content/uploads/2023/07/Palliative-Massage_the_serene_setting_of_an_end.png') no-repeat center center;
+        background-size: cover;
+        -webkit-background-size: cover;
+    }
+    
+    .hero::before {
+        display: none;
+    }
+} */
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative; /* Add this to ensure content stays above background */
+    z-index: 1; /* Ensure content is visible above background */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
         /* Enhanced iOS fix */
         @supports (-webkit-touch-callout: none) {
             .hero {
